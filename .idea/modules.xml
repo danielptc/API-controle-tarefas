@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/API-controle-tarefas.git.iml" filepath="$PROJECT_DIR$/.idea/API-controle-tarefas.git.iml" />
+      <module fileurl="file://$PROJECT_DIR$/controleTarefas/controleTarefas.iml" filepath="$PROJECT_DIR$/controleTarefas/controleTarefas.iml" />
+    </modules>
+  </component>
+</project>
