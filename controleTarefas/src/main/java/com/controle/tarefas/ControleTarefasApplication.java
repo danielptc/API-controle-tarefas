@@ -18,22 +18,22 @@ public class ControleTarefasApplication {
 		SpringApplication.run(ControleTarefasApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner initDataBase(TarefaRepository tarefaRepository) {
-
-
-
-		return args -> {
-			tarefaRepository.deleteAll();
-
-			Tarefa c = new Tarefa();
-			c.setNome("Nome");
-			c.setDescricao("Decrição");
-			c.setPrioridade(Tarefa.Prioridade.MEDIA);
-			c.setSituacao(Tarefa.Situacao.CANCELADA);
-
-			tarefaRepository.save(c);
-		};
-	}
+//	@Bean
+//	CommandLineRunner initDataBase(TarefaRepository tarefaRepository) {
+//
+//
+//
+//		return args -> {
+//			tarefaRepository.deleteAll();
+//
+//			Tarefa c = new Tarefa();
+//			c.setNome("Nome");
+//			c.setDescricao("Decrição");
+//			c.setPrioridade(Tarefa.Prioridade.MEDIA);
+//			c.setSituacao(Tarefa.Situacao.CANCELADA);
+//
+//			tarefaRepository.save(c);
+//		};
+//	}
 
 }
