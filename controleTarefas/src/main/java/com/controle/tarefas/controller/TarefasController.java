@@ -5,6 +5,7 @@ import com.controle.tarefas.repository.TarefaRepository;
 import com.controle.tarefas.service.TarefaService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,6 +29,14 @@ public class TarefasController {
     public List<Tarefa> listarTarefas() {
         return tarefaService.listarTarefas();
     }
+
+    @GetMapping("/paginado")
+    public Page<Tarefa> buscarTarefasPaginadas(@RequestParam String nome,
+                                      @RequestParam(defaultValue = "0") int pagina,
+                                      @RequestParam(defaultValue = "10") int tamanho) {
+        return tarefaService.buscarTarefasPaginadas(nome, pagina, tamanho);
+    }
+
 
     @GetMapping("/{id}")
     public Tarefa buscarTarefaPorId(@PathVariable Long id) {
