@@ -38,15 +38,15 @@ public class Tarefa {
     private String descricao;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = true)
+    @Column(nullable = false)
     private Prioridade prioridade = Prioridade.BAIXA;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = true)
+    @Column(nullable = false)
     private Situacao situacao = Situacao.ABERTA;
 
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     @FutureOrPresent(message = "A data não pode ser anterior à data atual")
     private Date dataPrevistaConclusao;
 
