@@ -13,3 +13,9 @@ EndPoint:
 
 http://localhost:8080/api/tarefas
 
+=======================================================
+
+FrontEnd dessa aplicação:
+
+https://github.com/danielptc/Angular-controle-tarefas
+
