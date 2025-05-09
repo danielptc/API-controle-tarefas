@@ -20,9 +20,8 @@ public class Tarefa {
 
     public enum Situacao {
         ABERTA,
-        EM_ANDAMENTO,
         CONCLUIDA,
-        CANCELADA
+        PENDENTE
     }
 
 

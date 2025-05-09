@@ -54,5 +54,15 @@ public class TarefasController {
         tarefaService.excluirTarefa(id);
     }
 
+    @PutMapping("/{id}/concluir")
+    public Tarefa concluirTarefa(@PathVariable Long id) {
+        return tarefaService.concluirTarefa(id);
+    }
+
+    @PutMapping("/{id}/pendente")
+    public Tarefa pendenteTarefa(@PathVariable Long id) {
+        return tarefaService.pendenteTarefa(id);
+    }
+
 
 }

@@ -47,6 +47,31 @@ public class TarefaService {
     public void excluirTarefa(Long id) {
         tarefaRepository.deleteById(id);
     }
+
+    public Tarefa concluirTarefa(Long id) {
+        Tarefa tarefa = tarefaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));
+
+        if (tarefa.getSituacao() == Tarefa.Situacao.ABERTA || tarefa.getSituacao() == Tarefa.Situacao.PENDENTE) {
+            tarefa.setSituacao(Tarefa.Situacao.CONCLUIDA);
+            return tarefaRepository.save(tarefa);
+        } else {
+            throw new RuntimeException("Tarefa não pode ser concluída");
+        }
+    }
+
+    public Tarefa pendenteTarefa(Long id) {
+        Tarefa tarefa = tarefaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));
+
+        if (tarefa.getSituacao() == Tarefa.Situacao.ABERTA || tarefa.getSituacao() == Tarefa.Situacao.CONCLUIDA) {
+            tarefa.setSituacao(Tarefa.Situacao.PENDENTE);
+            return tarefaRepository.save(tarefa);
+        } else {
+            throw new RuntimeException("Tarefa não pode ser marcada como pendente");
+        }
+    }
+
 }
 
 
